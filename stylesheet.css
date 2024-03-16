@@ -1,17 +1,30 @@
-*  {  box-sizing: border-box;
-    text-align: left;
-    font-family: helvetica;
-}
-   
+
 @font-face {
     font-family: Norse;
     src: url(Norse-Bold.otf);
 }
 
+:root {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
 
-p {
+*  {  box-sizing: border-box;
+    text-align: left;
+    font-family: helvetica;
+    
+}
+
+
+.logo {
     font-family: Norse;
+    
     color: white;
     font-size: 64px;
     margin-block: 0;
@@ -19,7 +32,7 @@ p {
     line-height: 80px;
 }
 
-.logo {
+.logo-container {
     
     display: flex;
     justify-content: center;
@@ -27,7 +40,6 @@ p {
 
     width: 100%;
     height: 100px;
-   
     position: relative; 
     top: 30%;
 
@@ -39,24 +51,28 @@ main {
     display: flex;
     width: 100%;
     height: 100vh;
-    border: 1px solid;
+   
 }
 
 div .container {
     padding: 2rem;
 }
 
+div .container[id=middle] {
+    padding: 1rem 0 1rem 2rem;
+}
+
 #left {
     background-image: url(https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
-    border: 1px solid;
+    
 
     width: 30%;
 }
 
 #right {
-    background-color: blue; 
-    border: 1px solid;
+    background-color: rgb(242, 242, 242);
+    
 
     width: 70%;
 }
@@ -66,34 +82,104 @@ h1 {
     font-weight: 500;
 }
 
-#top { 
-    background-color: rgb(249, 250, 251);
-    border: 1px solid;
-    height: 33%;
+h2 {
+    font-size: 16px;
+    font-weight: 500;
     
+}
 
+#top { 
+    height: 33%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 #middle {
-    background-color: yellow;
-    border: 1px solid;
+    background-color: rgb(251, 251, 251);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
-#bottom {
-    background-color: grey;
-    border: 1px solid;
+
+form {
+    padding: 0;
 }
+
+fieldset {
+    border: 0;
+    padding-block: 0;
+    padding-inline: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+legend {
+    padding: 0 0 10px 0;
+}
+
+fieldset div {
+    padding: 5px 50px 0 0;
+    font-size: 8px;
+    font-weight: 700;
+    color: rgb(109, 109, 109);
+}
+
+label {
+    display: block;
+    font-size: 6px;
+    padding-bottom: 2px;
+    letter-spacing: 0.05rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 150px;
+  height: 20px;
+  padding: 2px; /* Add padding for better spacing */
+  border: 1px solid #ccc; /* Add a subtle border */
+  border-radius: 3px; /* Add rounded corners */
+  font-size: 8px;
+  margin-bottom: 10px; /* Add some space between input fields */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Add focus styles for input fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #66afe9; /* Change border color on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+input[type="password"]:invalid {
+  border-color: red; /* Change border color on focus */
+  outline: none; /* Remove default focus outline */
+  font-size: 8px;
+  color: red;
+}
+
+
 
 button {
     background-color: darkolivegreen;
+    font-size: 10px;
+    font-weight: bold;
     color: white;
-    height: 35px;
+    height: 30px;
     padding: 0.5rem 2rem 0.5rem 2rem;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     outline:none;
     box-shadow: 1px 1px 2px rgb(89, 89, 89);
+    margin: 10px
+}
+
+.info {
+    font-size: 10px;
 }
